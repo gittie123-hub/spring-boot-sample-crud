@@ -17,7 +17,7 @@ public class CustomerOrderController {
     @Autowired
     private CustomerOrderService customerOrderService;
 
-    @JsonIgnore
+
     @PostMapping
     public CustomerOrder createOrder(@RequestBody OrderRequest orderRequest) {
         return customerOrderService.createOrder(orderRequest);
@@ -25,6 +25,7 @@ public class CustomerOrderController {
     @JsonIgnore
     @GetMapping("/{id}")
     public CustomerOrder getOrderById(@PathVariable Long id) {
+
         return customerOrderService.getOrderById(id);
     }
 }
