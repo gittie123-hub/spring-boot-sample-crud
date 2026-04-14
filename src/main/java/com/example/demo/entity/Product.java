@@ -9,6 +9,7 @@ import lombok.Data;
 @Entity
 @Data
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,6 +17,5 @@ public class Product {
     private String name;
 
     private double price;
-
 }
 

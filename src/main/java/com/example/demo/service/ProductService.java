@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Product;
+import com.example.demo.exceptions.ProductNotFoundException;
 import com.example.demo.repository.ProductRepository;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,6 @@ public class ProductService {
 
     public Product getProductbyId(Long id){
         return productRepository.findById(id)
-                .orElseThrow(()->new RuntimeException("Product not found"));
+                .orElseThrow(()->new ProductNotFoundException("Product not found"));
     }
 }
